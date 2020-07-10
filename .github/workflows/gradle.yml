@@ -24,3 +24,5 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew assembleDebug
+    - name: Run SonarScanner for Gradle
+      run: ./gradlew sonarqube -Dsonar.host.url=https://sqbd1.kryptowire.com -Dsonar.login=${{ SONARQUBE_TOKEN }} -Dsonar.verbose=true
